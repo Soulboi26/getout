@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SOULBOI</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* Star texture background */
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+      animation: starScroll 60s linear infinite;
+      opacity: 0.2;
+      z-index: -5;
+    }
+
+    @keyframes starScroll {
+      from { transform: translate(0, 0); }
+      to { transform: translate(-500px, -500px); }
+    }
+
+    /* Liquid glass layer */
+    .glass-layer {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(30px);
+      background: rgba(255, 255, 255, 0.05);
+      z-index: -3;
+      animation: floatGlass 15s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatGlass {
+      0% {
+        transform: translate(-10px, -10px) scale(1);
+      }
+      100% {
+        transform: translate(10px, 10px) scale(1.03);
+      }
+    }
+
+    /* SOULBOI text */
+    .text-container {
+      position: relative;
+      font-family: 'Impact', sans-serif;
+      font-size: 8vw;
+      text-align: center;
+      z-index: 1;
+      background: linear-gradient(
+        135deg,
+        #cfcfcf 0%, #ffffff 20%, #bcbcbc 40%,
+        #999999 60%, #ffffff 80%, #7a7a7a 100%
+      );
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: chromeFlow 2.5s infinite linear, pulse 2s infinite;
+    }
+
+    
+  .text-container::before {
+  content: 'SOULBOI';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, #3de8d4, #6a4fff, #ff6f61, #b594f8);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: blur(7px) brightness(1.1);
+  animation: smoothGradient 6s ease-in-out infinite;
+  z-index: -1;
+}
+
+.text-container::after {
+  content: 'SOULBOI';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(45deg, #b594f8, #3de8d4);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: blur(10px) opacity(0.7);
+  animation: gentlePulse 4s ease-in-out infinite;
+  z-index: -2;
+}
+
+
+
+
+    @keyframes chromeFlow {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    @keyframes fireFlicker {
+      0%, 100% {
+        opacity: 0.8;
+        transform: translateY(0px);
+      }
+      50% {
+        opacity: 1;
+        transform: translateY(-1px) scale(1.02);
+      }
+    }
+
+    @keyframes lightningFlash {
+      0%, 95%, 100% {
+        opacity: 0.1;
+      }
+      96% {
+        opacity: 1;
+        transform: scale(1.1);
+      }
+      97% {
+        opacity: 0.2;
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.03);
+      }
+    }
+	@keyframes socialGlow {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+}
+@keyframes glowWave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes subtlePulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+@keyframes smoothGradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes gentlePulse {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.03); }
+}
+
+
+
+	.social-links {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  gap: 30px;
+  z-index: 2;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.icon img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.9) drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+}
+
+.icon:hover {
+  transform: scale(1.2);
+  filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
+}
+
+.instagram img {
+  filter: drop-shadow(0 0 5px #e1306c);
+}
+
+.telegram img {
+  filter: drop-shadow(0 0 5px #0088cc);
+}
+
+  </style>
+</head>
+<body>
+  <!-- Liquid glass background layer -->
+  <div class="glass-layer"></div>
+
+  <!-- Centered SOULBOI text -->
+  <div class="text-container">SOULBOI</div>
+
+  <!-- Social Links -->
+  <div class="social-links">
+    <a href="https://instagram.com/_soul_boi_26" target="_blank" class="icon instagram" title="Instagram">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+    </a>
+    <a href="https://t.me/soul_boi_26" target="_blank" class="icon telegram" title="Telegram">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="Telegram">
+    </a>
+  </div>
+</body>
+
+</html>

@@ -45,13 +45,18 @@
 
     /* Liquid glass layer */
     .glass-layer {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backdrop-filter: blur(30px);
-      background: rgba(255, 255, 255, 0.05);
-      z-index: -3;
-      animation: floatGlass 15s ease-in-out infinite alternate;
+       background: white;
+    min-height: 80vh;
+    width: 60%;
+    background: linear-gradient(
+        to right bottom, 
+        rgba(255, 255, 255, 0.7), 
+        rgba(255, 255, 255, 0.3)
+        );
+        border-radius: 2rem;
+        z-index: 2;
+        backdrop-filter: blur(2rem);
+        display: flex;
     }
 
     @keyframes floatGlass {
